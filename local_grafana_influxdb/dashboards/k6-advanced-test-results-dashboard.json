@@ -32,7 +32,7 @@
     {
       "type": "datasource",
       "id": "influxdb",
-      "name": "InfluxDB",
+      "name": "k6influxdb",
       "version": "1.0.0"
     },
     {

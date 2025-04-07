@@ -1,0 +1,11 @@
+{
+    "out": [{
+        "type": "influxdb",
+        "address": "http://localhost:8086",
+        "organization": "k6org",
+        "bucket": "k6bucket",
+        "token": "${INFLUXDB_TOKEN}"
+    }]
+}
+
+  

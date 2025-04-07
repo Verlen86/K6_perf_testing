@@ -31,7 +31,7 @@
     {
       "type": "datasource",
       "id": "influxdb",
-      "name": "InfluxDB",
+      "name": "k6influxdb",
       "version": "1.0.0"
     },
     {
@@ -63,7 +63,7 @@
           "bars": true,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "k6influxdb",
+          "datasource": null,
           "fill": 1,
           "id": 1,
           "interval": ">1s",
@@ -171,7 +171,7 @@
           "bars": true,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "k6influxdb",
+          "datasource": null,
           "fill": 1,
           "id": 17,
           "interval": "1s",
@@ -280,7 +280,7 @@
           "bars": true,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "k6influxdb",
+          "datasource": null,
           "fill": 1,
           "id": 7,
           "interval": "1s",
@@ -393,7 +393,7 @@
           "bars": true,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "k6influxdb",
+          "datasource": null,
           "fill": 1,
           "id": 10,
           "interval": ">1s",
@@ -528,7 +528,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "k6influxdb",
+          "datasource": null,
           "decimals": 2,
           "format": "ms",
           "gauge": {
@@ -594,7 +594,7 @@
               ],
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(\"value\") FROM $Measurement WHERE $timeFilter ",
+              "query": "from(bucket: v.defaultBucket) |> range(start: v.timeRangeStart, stop: v.timeRangeStop) |> filter(fn: (r) => r._measurement == v.Measurement) |> mean()",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -637,7 +637,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "k6influxdb",
+          "datasource": null,
           "decimals": 2,
           "format": "ms",
           "gauge": {
@@ -746,7 +746,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "k6influxdb",
+          "datasource": null,
           "decimals": 2,
           "format": "ms",
           "gauge": {
@@ -855,7 +855,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "k6influxdb",
+          "datasource": null,
           "decimals": 2,
           "format": "ms",
           "gauge": {
@@ -964,7 +964,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "k6influxdb",
+          "datasource": null,
           "decimals": 2,
           "format": "ms",
           "gauge": {
@@ -1073,7 +1073,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "k6influxdb",
+          "datasource": null,
           "decimals": 2,
           "format": "ms",
           "gauge": {
@@ -1178,7 +1178,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "k6influxdb",
+          "datasource": null,
           "description": "Grouped by 1 sec intervals",
           "fill": 1,
           "height": "250px",
@@ -1422,7 +1422,7 @@
             "mode": "spectrum"
           },
           "dataFormat": "timeseries",
-          "datasource": "k6influxdb",
+          "datasource": null,
           "heatmap": {},
           "height": "250px",
           "highlightCards": true,
